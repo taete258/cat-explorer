@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "transformer": "node_modules/react-native-typescript-transformer/index.js",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -25,6 +26,13 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "89018729-085b-41eb-8da1-3d143856f6c0"
+      }
+    },
+    "owner": "taete258",
+    "scheme":""
   }
 }
