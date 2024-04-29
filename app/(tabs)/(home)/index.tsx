@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { getCatList } from "../shared/api/get-cat-list";
+import { SafeAreaView, View } from "react-native";
 import { FlashList } from "@shopify/flash-list";
-import CatCard from "../shared/components/cat-card";
+import { getCatList } from "@api/get-cat-list";
+import CatCard from "@components/cat-card";
 
-export default function Page() {
+const Page = () => {
   const [pokenmonList, setPokenmonList] = useState<CatDataType[]>();
   useEffect(() => {
     try {
@@ -18,7 +18,7 @@ export default function Page() {
   }, []);
 
   return (
-    <SafeAreaView className="flex-1">
+    <SafeAreaView className="flex-1 bg-indigo-300">
       <View className="flex-1">
         <FlashList
           data={pokenmonList}
@@ -28,8 +28,10 @@ export default function Page() {
           numColumns={1}
           ItemSeparatorComponent={() => <View className="h-3" />}
           contentContainerStyle={{ paddingHorizontal: 16 }}
+          ListFooterComponentStyle={{ paddingVertical: 32 }}
         />
       </View>
     </SafeAreaView>
   );
-}
+};
+export default Page;
