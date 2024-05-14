@@ -4,13 +4,15 @@
     "slug": "cat-explorer-clhijxmp6880qzoksmseu",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo-128.png",
     "userInterfaceStyle": "light",
     "transformer": "node_modules/react-native-typescript-transformer/index.js",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo-512.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "width": 50,
+      "height": 50
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.catexproler.taete258"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -33,6 +36,6 @@
       }
     },
     "owner": "taete258",
-    "scheme":""
+    "scheme": ""
   }
 }
