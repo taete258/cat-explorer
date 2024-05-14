@@ -23,10 +23,13 @@ const Page = () => {
         <FlashList
           data={pokenmonList}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => <CatCard {...item} />}
+          renderItem={({ item }) => (
+            <View className="w-full items-center justify-center p-1.5">
+              <CatCard {...item} />
+            </View>
+          )}
           estimatedItemSize={100}
           numColumns={1}
-          ItemSeparatorComponent={() => <View className="h-3" />}
           contentContainerStyle={{ paddingHorizontal: 16 }}
           ListFooterComponentStyle={{ paddingVertical: 32 }}
         />

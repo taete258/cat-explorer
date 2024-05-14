@@ -9,6 +9,13 @@ const AboutMeScreenLayout = () => {
           name="index"
           options={{
             headerTitle: "About Me",
+            headerShadowVisible: false,
+            headerStyle: {
+              backgroundColor: "rgb(165 180 252)",
+            },
+            headerTitleStyle: {
+              color: "white",
+            },
           }}
         />
       </Stack>
