@@ -3,6 +3,7 @@ import { SafeAreaView, View } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { getCatList } from "@api/get-cat-list";
 import CatCard from "@components/cat-card";
+import { CatDataType } from "shared/types/cat-type";
 
 const Page = () => {
   const [pokenmonList, setPokenmonList] = useState<CatDataType[]>();

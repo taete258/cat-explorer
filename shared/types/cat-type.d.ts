@@ -1,4 +1,4 @@
-type Breed = {
+export type Breed = {
     weight: {
       imperial: string;
       metric: string;
