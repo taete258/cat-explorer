@@ -21,13 +21,13 @@ const HomeScreenLayout = () => {
           }}
         />
         <Stack.Screen
-          name="cat-detail"
+          name="cat-detail/[detail]"
           options={{
-            ...StackScreenWithSearchBar,
-            headerTitle: "Detail",
+            headerShown: false,
             headerShadowVisible: false,
+            headerBackVisible: false,
             headerStyle: {
-              backgroundColor: "rgb(165 180 252)",
+              backgroundColor: "white",
             },
             headerTitleStyle: {
               color: "white",

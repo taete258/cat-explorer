@@ -6,12 +6,12 @@ import CatCard from "@components/cat-card";
 import { CatDataType } from "shared/types/cat-type";
 
 const Page = () => {
-  const [pokenmonList, setPokenmonList] = useState<CatDataType[]>();
+  const [catDataList, setCatDataList] = useState<CatDataType[]>();
   useEffect(() => {
     try {
       getCatList().then((response) => {
-        console.log(JSON.stringify(response, null, 2));
-        response ? setPokenmonList(response) : null;
+        // console.log(JSON.stringify(response, null, 2));
+        response ? setCatDataList(response) : null;
       });
     } catch (e) {
       console.log(e);
@@ -22,11 +22,11 @@ const Page = () => {
     <SafeAreaView className="flex-1 bg-indigo-300">
       <View className="flex-1">
         <FlashList
-          data={pokenmonList}
+          data={catDataList}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <View className="w-full items-center justify-center p-1.5">
-              <CatCard {...item} />
+              <CatCard {...item} index={index} />
             </View>
           )}
           estimatedItemSize={100}

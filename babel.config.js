@@ -16,7 +16,9 @@ module.exports = function(api) {
           '@utils': './shared/utils',
         },
       },
-  ]],
-  };
+    ],
+    'react-native-reanimated/plugin',
+ ],
+};
 };
 

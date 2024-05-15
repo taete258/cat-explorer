@@ -1,26 +1,33 @@
 import { Image } from "expo-image";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import { Link } from "expo-router";
+import { Pressable, Text, TouchableOpacity, View } from "react-native";
+
 import { CatDataType } from "shared/types/cat-type";
-const CatCard: React.FC<CatDataType> = ({ breeds, url }) => {
+import Animated, { FadeInDown, ZoomIn } from "react-native-reanimated";
+import { router } from "expo-router";
+const CatCard: React.FC<CatDataType & { index: number }> = ({
+  breeds,
+  url,
+  index,
+}) => {
   return (
-    <Link
-      href={{
-        pathname: "/cat-detail/[detail]",
-        params: { detail: JSON.stringify(breeds[0]) },
-      }}
-      asChild
+    <Animated.View
+      entering={FadeInDown.delay(150 * index)}
+      className="rounded-2xl w-full h-[10rem] bg-white items-start justify-center space-y-1 overflow-visible"
     >
-      <TouchableOpacity
-        activeOpacity={0.8}
-        className="rounded-2xl w-full h-[10rem] bg-white items-start justify-center space-y-1 overflow-visible"
+      <Pressable
+        className="w-full h-full"
+        onPress={() => {
+          router.navigate({
+            pathname: "/cat-detail/[detail]",
+            params: { detail: JSON.stringify({ breeds, url }) },
+          });
+        }}
       >
         <Image
-          source={url}
+          source={{ uri: url }}
           style={{ width: "100%", height: 180 }}
           className="rounded-t-lg"
-          contentPosition="top"
         />
         <View className="p-4">
           <Text
@@ -34,8 +41,8 @@ const CatCard: React.FC<CatDataType> = ({ breeds, url }) => {
             {breeds[0]?.temperament}
           </Text>
         </View>
-      </TouchableOpacity>
-    </Link>
+      </Pressable>
+    </Animated.View>
   );
 };
 
