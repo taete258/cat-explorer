@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import { useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import { Platform } from "react-native";
 const TabsNavigation = () => {
   useEffect(() => {
     console.log("TabsNavigation mounted");
@@ -20,6 +21,8 @@ const TabsNavigation = () => {
           borderTopRightRadius: 20,
           borderTopWidth: 0,
           paddingTop: 8,
+          paddingBottom: Platform.OS === "ios" ? 20 : 8,
+          minHeight: Platform.OS === "ios" ? 60 : 65,
         },
         headerShown: false,
       }}

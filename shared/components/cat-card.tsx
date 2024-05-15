@@ -12,7 +12,7 @@ const CatCard: React.FC<CatDataType & { index: number }> = ({
 }) => {
   return (
     <Animated.View
-      entering={FadeInDown.delay(150 * index)}
+      entering={FadeInDown.delay(100 * index)}
       className="rounded-2xl w-full h-[10rem] bg-white items-start justify-center space-y-1 overflow-visible"
     >
       <Pressable
