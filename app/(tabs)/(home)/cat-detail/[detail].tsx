@@ -3,11 +3,7 @@ import { useLocalSearchParams } from "expo-router";
 import { Breed } from "shared/types/cat-type";
 import { useEffect, useState } from "react";
 import { Image } from "expo-image";
-import Animated, {
-  FadeInDown,
-  FadingTransition,
-  ZoomInDown,
-} from "react-native-reanimated";
+import Animated, { FadeInDown } from "react-native-reanimated";
 import CustomHeader from "@components/custom-header";
 import { StatusBar } from "expo-status-bar";
 import TraitsScore from "@components/traits-score";

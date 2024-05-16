@@ -1,12 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import {
-  ActivityIndicator,
-  Platform,
-  RefreshControl,
-  SafeAreaView,
-  Text,
-  View,
-} from "react-native";
+import { RefreshControl, SafeAreaView, View } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 import { getCatList } from "@api/get-cat-list";
 import CatCard from "@components/cat-card";

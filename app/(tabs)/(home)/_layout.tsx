@@ -1,6 +1,6 @@
 import PageHeader from "@components/page-header";
 import { Stack } from "expo-router";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 const HomeScreenLayout = () => {
   return (
