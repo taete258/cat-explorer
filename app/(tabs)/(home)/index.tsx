@@ -33,7 +33,6 @@ const Page = () => {
 
   const onLoadMore = useCallback(() => {
     getCatList({ page: page + 1 }).then((response) => {
-      console.log(JSON.stringify(response, null, 2));
       response ? setCatDataList((prev) => prev?.concat(response)) : null;
       setPage((prev) => prev + 1);
     });
