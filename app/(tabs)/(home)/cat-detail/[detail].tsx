@@ -19,7 +19,6 @@ const Page = () => {
   const [data, setData] = useState<{ breeds: Breed[]; url: string }>();
 
   useEffect(() => {
-    console.log(JSON.stringify(JSON.parse(detail), null, 2));
     setData(JSON.parse(detail));
   }, [detail]);
 
@@ -32,8 +31,12 @@ const Page = () => {
         <Animated.View entering={FadeInDown.delay(200)}>
           <Image
             source={{ uri: data?.url }}
-            className="oject-contain w-full h-[300px]"
+            className="oject-contain w-full h-[300px] bg-gray-200"
             contentPosition={"top center"}
+            cachePolicy="disk"
+            contentFit="cover"
+            priority="high"
+            placeholder={"https://placehold.co/300x300?font=roboto"}
           />
           <View className=" bg-white m-4 p-6 rounded-2xl  space-y-6">
             {/* title */}
@@ -102,7 +105,7 @@ const Page = () => {
             </View>
           </View>
         </Animated.View>
-        <View className={`${Platform.OS === "ios" ? "h-20" : "h-12"}`} />
+        <View className={`${Platform.OS === "ios" ? "h-20" : "h-16"}`} />
       </ScrollView>
     </View>
   );

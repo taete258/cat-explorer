@@ -42,7 +42,9 @@ const Page = () => {
     const start = async () => {
       try {
         await onRefresh();
-        setIsLoadig(false);
+        setTimeout(() => {
+          setIsLoadig(false);
+        }, 1000);
       } catch (e) {
         console.log(e);
       }

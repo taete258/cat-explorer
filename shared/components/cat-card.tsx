@@ -28,6 +28,8 @@ const CatCard: React.FC<CatDataType & { index: number }> = ({
           source={{ uri: url }}
           style={{ width: "100%", height: 180 }}
           className="rounded-t-lg"
+          cachePolicy="disk"
+          recyclingKey={index.toString()}
         />
         <View className="p-4">
           <Text
