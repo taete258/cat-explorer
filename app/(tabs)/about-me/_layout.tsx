@@ -1,3 +1,4 @@
+import PageHeader from "@components/page-header";
 import { Stack } from "expo-router";
 import { SafeAreaView, View } from "react-native";
 
@@ -8,14 +9,11 @@ const AboutMeScreenLayout = () => {
         <Stack.Screen
           name="index"
           options={{
-            headerTitle: "About Me",
             headerShadowVisible: false,
             headerStyle: {
               backgroundColor: "rgb(165 180 252)",
             },
-            headerTitleStyle: {
-              color: "white",
-            },
+            headerTitle: () => <PageHeader title={"About Me"} />,
           }}
         />
       </Stack>

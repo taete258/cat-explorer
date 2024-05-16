@@ -31,7 +31,11 @@ const SkeletonCard: React.FC<{ total: number }> = ({ total }) => {
   }, []);
 
   return (
-    <ScrollView className="w-full space-y-2" scrollEnabled={false}>
+    <ScrollView
+      className="w-full space-y-2"
+      scrollEnabled={false}
+      showsVerticalScrollIndicator={false}
+    >
       {new Array(total).fill(0).map((_, index) => (
         <View
           key={index}

@@ -1,6 +1,6 @@
-import { NativeStackNavigationOptions } from "@react-navigation/native-stack";
+import PageHeader from "@components/page-header";
 import { Stack } from "expo-router";
-import { Platform, View } from "react-native";
+import { View, Text } from "react-native";
 
 const HomeScreenLayout = () => {
   return (
@@ -9,15 +9,12 @@ const HomeScreenLayout = () => {
         <Stack.Screen
           name="index"
           options={{
-            ...StackScreenWithSearchBar,
-            headerTitle: "Home",
+            title: "Home",
             headerShadowVisible: false,
             headerStyle: {
               backgroundColor: "rgb(165 180 252)",
             },
-            headerTitleStyle: {
-              color: "white",
-            },
+            headerTitle: (props) => <PageHeader title={props.children} />,
           }}
         />
         <Stack.Screen
@@ -40,19 +37,3 @@ const HomeScreenLayout = () => {
 };
 
 export default HomeScreenLayout;
-
-const StackScreenWithSearchBar: NativeStackNavigationOptions =
-  Platform.OS === "ios"
-    ? {
-        headerLargeTitle: true,
-        headerLargeStyle: {
-          backgroundColor: "rgb(165 180 252)",
-        },
-        headerLargeTitleStyle: {
-          color: "white",
-        },
-        headerTintColor: "rgb(99 102 241)",
-        headerTransparent: true,
-        headerBlurEffect: "prominent",
-      }
-    : null;
